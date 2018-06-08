@@ -13,7 +13,7 @@ function callback_func() {
 }
 function loop(times = 0, callback = null) {
 
-    if (callback===null) return;
+    if (typeof callback !== "function") return;
     for (let i=0; i<times; i++){
         callback();
     }
