@@ -8,6 +8,6 @@ export default class User {
     }
 
     sayHi(){
-        alert(`Hi, ${this.firstName} ${this.lastName}!`);
+        console.log(`Hi, ${this.firstName} ${this.lastName}!`);
     }
 }
