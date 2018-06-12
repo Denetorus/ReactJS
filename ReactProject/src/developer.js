@@ -1,4 +1,4 @@
-import './developer.css'
+import "./developer.css"
 
 export default class Developer{
 
