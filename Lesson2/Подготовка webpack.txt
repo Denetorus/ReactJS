@@ -1,0 +1,168 @@
+//Обновление npm до новой версии
+npm install npm -g
+
+//Проверка текущей версии
+npm -v
+
+// Начало разработки - создание файла package.json
+npm init
+
+//=========================
+// УСТАНОВКА REACT:
+//=========================
+
+// 1) ReactJS
+npm i react
+
+//=========================
+// УСТАНОВКА BABEL:
+//=========================
+
+// Babel - для транспиляции кода из ES6 в ES5
+//	babel-core - ядро
+// 	babel-cli - для использования в командной строке
+//	babel-loader - для загрузки и обработки файлов\
+//	babel-preset-env - для поддержки ES6 (ES2015)
+//	babel-preset-stage-0 - для поддержки экспериментальных функций JS
+
+npm i -D babel-core babel-loader babel-preset-env babel-preset-stage-0
+
+//=================================
+// Настраиваем конфигурацию babel:
+//=================================
+
+// 1) Создаём в корне файл .babelrc и перечисляем в нём все подключенные дополнения (presets)
+{
+  "presets": ["env", "stage-0"]
+}
+
+//=========================
+// УСТАНОВКА ЗАГРУЗЧИКОВ:
+//=========================
+
+// 1) Загрузчик стилей и css файлов
+
+npm i -D style-loader css-loader
+
+//=========================
+// УСТАНОВКА ПЛАГИНОВ:
+//=========================
+
+// 1) Плагин стилей, позволяет все стили поместить в один отдельный файл
+// @next - для установки версии поддерживающей webpack-4
+
+npm i -D extract-text-webpack-plugin@next
+
+// 2) Помощник удаления папок и файлов
+npm i -D rimraf
+
+
+
+
+//=========================
+// УСТАНОВКА WEBPACK:
+//=========================
+
+// 1) Webpack
+npm i -D webpack
+
+	// Для использования локального webpack в файле package.json добавить script
+	// без использования сервера
+	"dev": "webpack --mode development"
+	// или с использованием сервера
+	"dev": "webpack-dev-server --mode development",
+
+	// Для пересборки проекта с удалением старых файлов в файле package.json добавить script
+    	"build": "rimraf dist && webpack --mode production",
+
+// 2) Webpack-cli (для сборки из командной строки или через менеджер пакетов)
+npm i -D webpack-cli
+
+
+// 3) Сервер webpack
+npm i -D webpack-dev-server
+
+//=================================
+// Настраиваем конфигурацию webpack:
+//=================================
+
+// 1) Создаём в корне файл webpack.config.js
+
+// для доступа к корневой папке
+const path = require('path');
+
+// для работы с css файлами
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+// для работы с html файлами
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// сюда подключаем все модули
+module.exports = {
+
+    // точка входа
+    entry:{
+        main: path.resolve(__dirname, 'src/index.js'),
+    },
+
+    // точка выхода ( .[chunkhash]. - для добавления к имени файла хэш )
+    output: {
+        path: path.resilve(__dirname, 'dist'),
+        filename: 'bundle.[chunkhash].js'
+    }
+
+    // доп. модули
+    module:{
+
+	// модуль правил
+	rules:[
+
+	    // правило обработки файлов js,
+	    //	исключая папку node_modules,
+	    //	с использованием babel-loader
+
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use:{
+                    loader: "babel-loader"
+                }
+            },
+
+
+	    // правило обработки файлов сss,
+	    {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader"]
+                })
+            }
+
+        ]
+    },
+
+    // плагины
+    plugins:[
+
+	// плагин выделения css файлов в единый файл ( .[chunkhash]. - для добавления к имени файла хэш )
+        new ExtractTextPlugin({
+	    filename: 'main.[chunkhash].css'
+            disabled: false,
+            allChunks: true,
+	}),
+
+	// плагин сборки html файлов в
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src/index.html'),
+            filename: 'index.html'
+        })
+
+    ]
+
+
+
+};
+
+
+
