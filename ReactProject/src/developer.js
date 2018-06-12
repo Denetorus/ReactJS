@@ -1,14 +1,10 @@
-import './user.css'
+import './developer.css'
 
-export default class User {
+export default class Developer{
 
     constructor(firstName, lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    sayHi(){
-        console.log(`Hi, ${this.firstName} ${this.lastName}!`);
     }
 
     fullName(){

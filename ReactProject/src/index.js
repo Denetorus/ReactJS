@@ -1,6 +1,10 @@
 import User from "./user";
+import Developer from "./developer";
 
 const user = new User("Иван", "Петров");
 user.sayHi();
 
-console.log("Hello, world!!!");
+const developer = new Developer("Denis", "Mylnikov");
+document.getElementById("developer").innerText = `Этот сайт разработал ${developer.fullName()}`;
+document.getElementById("user").innerText = `${user.fullName()}`;
+
