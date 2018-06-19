@@ -154,7 +154,7 @@ const articleItems = [
     articleItem3,
 ];
 
-export default class MainPage extends Component{
+export default class HomePage extends Component{
     render(){
         return (
             <main>

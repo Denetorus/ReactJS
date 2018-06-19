@@ -1,5 +1,5 @@
 import "./blog.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.css"
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 import React, { Component } from "react";
 import ReactDom from "react-dom";
