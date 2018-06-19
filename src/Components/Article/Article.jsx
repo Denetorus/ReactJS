@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ArticleItem from "components/Article/ArticleItem";
+import React, { Component } from 'react';
+import ArticleItem from 'components/Article/ArticleItem';
 
 export default class Article extends Component{
     render(){

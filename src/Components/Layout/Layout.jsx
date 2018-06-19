@@ -1,22 +1,22 @@
-import "./Layout.css"
+import './Layout.css'
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Header from "components/Header";
-import Footer from "components/Footer";
-import HomePage from "components/HomePage";
-import FeaturesPage from "components/FeaturesPage/FeaturesPage";
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import HomePage from 'components/HomePage';
+import FeaturesPage from 'components/FeaturesPage/FeaturesPage';
 
 const headerItems = [
-    { title: 'Home', link: '#', name: "Home"},
-    { title: 'New features', link: '#', name: "Features"},
-    { title: 'Press', link: '#', name: "Press" },
-    { title: 'New hires', link: '#', name: "Hires" },
-    { title: 'About', link: '#', name: "About" },
+    { title: 'Home', link: '#', name: 'Home'},
+    { title: 'New features', link: '#', name: 'Features'},
+    { title: 'Press', link: '#', name: 'Press' },
+    { title: 'New hires', link: '#', name: 'Hires' },
+    { title: 'About', link: '#', name: 'About' },
 ];
 
 const initalState = {
-    HeaderItem: "Home"
+    HeaderItem: 'Home'
 };
 
 export default class Layout extends Component
@@ -35,17 +35,17 @@ export default class Layout extends Component
 
     render(){
         const { HeaderItem } = this.state;
-        let Page = "";
-        if (HeaderItem==="Home") {
+        let Page = '';
+        if (HeaderItem==='Home') {
             Page = <HomePage />;
-        } else if (HeaderItem==="Features") {
+        } else if (HeaderItem==='Features') {
             Page = <FeaturesPage />
-        } else if (HeaderItem==="Press") {
-            Page = "Press"
-        } else if (HeaderItem==="Hires") {
-            Page = "Hires"
-        } else if (HeaderItem==="About") {
-            Page = "About"
+        } else if (HeaderItem==='Press') {
+            Page = 'Press'
+        } else if (HeaderItem==='Hires') {
+            Page = 'Hires'
+        } else if (HeaderItem==='About') {
+            Page = 'About'
         }
         console.log(HeaderItem);
         return (

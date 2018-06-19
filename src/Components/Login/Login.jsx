@@ -1,12 +1,12 @@
+import React, { Component } from 'react';
 
-import React, { Component } from "react";
-import Modal from "components/Modal/index";
+import Modal from 'components/Modal/index';
 
 export default class Login extends Component{
 
     modalShow(){
-        let item = document.getElementById("modal");
-        item.classList.add("modal__show");
+        let item = document.getElementById('modal');
+        item.classList.add('modal__show');
     }
 
     render(){

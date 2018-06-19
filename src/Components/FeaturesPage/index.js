@@ -1,1 +1,1 @@
-export default from "./FeaturesPage";
+export default from './FeaturesPage';

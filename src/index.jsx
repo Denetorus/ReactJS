@@ -1,10 +1,10 @@
-import "./blog.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import './blog.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-import React, { Component } from "react";
-import ReactDom from "react-dom";
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 
-import Layout from "./Components/Layout/Layout.jsx";
+import Layout from './Components/Layout/Layout.jsx';
 
 
 

@@ -1,25 +1,25 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import Menu from "../Menu";
+import Menu from '../Menu';
 
 const MenuArchives = [
-    { link: "#", title: "March 2014" },
-    { link: "#", title: "February 2014" },
-    { link: "#", title: "January 2014" },
-    { link: "#", title: "December 2013" },
-    { link: "#", title: "November 2013" },
-    { link: "#", title: "October 2013" },
-    { link: "#", title: "September 2013" },
-    { link: "#", title: "August 2013" },
-    { link: "#", title: "July 2013" },
-    { link: "#", title: "June 2013" },
-    { link: "#", title: "May 2013" },
-    { link: "#", title: "April 2013" },
+    { link: '#', title: 'March 2014' },
+    { link: '#', title: 'February 2014' },
+    { link: '#', title: 'January 2014' },
+    { link: '#', title: 'December 2013' },
+    { link: '#', title: 'November 2013' },
+    { link: '#', title: 'October 2013' },
+    { link: '#', title: 'September 2013' },
+    { link: '#', title: 'August 2013' },
+    { link: '#', title: 'July 2013' },
+    { link: '#', title: 'June 2013' },
+    { link: '#', title: 'May 2013' },
+    { link: '#', title: 'April 2013' },
 ];
 const MenuElsewhere = [
-    { link: "#", title: "GitHub" },
-    { link: "#", title: "Twitter" },
-    { link: "#", title: "Facebook" },
+    { link: '#', title: 'GitHub' },
+    { link: '#', title: 'Twitter' },
+    { link: '#', title: 'Facebook' },
 ];
 
 export default class SideNav extends Component{

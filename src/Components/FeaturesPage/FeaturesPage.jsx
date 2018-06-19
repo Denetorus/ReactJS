@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import SideNav from "components/SideNav/SideNav";
+import SideNav from 'components/SideNav/SideNav';
 
 export default class FeaturesPage extends Component{
     render(){

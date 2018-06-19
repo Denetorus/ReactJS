@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
 export default class ArticleHeader extends Component{
     render(){
         const { item } = this.props;
-        let Paragraph = "";
+        let Paragraph = '';
         if (item.size===3){
             Paragraph = <h3>{item.content}</h3>
         } else if (item.size===4) {

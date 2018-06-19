@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import PageContent from "../PageContent";
-import SideNav from "components/SideNav/SideNav";
+import PageContent from '../PageContent';
+import SideNav from 'components/SideNav/SideNav';
 
 const articleItem1 = {
-    title: "Sample blog post",
-    date: "January 1, 2014",
-    author: "Mark",
+    title: 'Sample blog post',
+    date: 'January 1, 2014',
+    author: 'Mark',
     paragraphs: [
         {
             type: 'text',
