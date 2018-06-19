@@ -28,7 +28,7 @@ export default class Header extends Component{
                 <div className="container">
                     <nav className="blog-nav">
                         {headerItems.map(item =>
-                            <div className="blog-nav-item"
+                            <div key={item.name} className="blog-nav-item"
                                  onClick={(e) => this.handleHeader(e, item.name)}>
                                     {item.title}
                             </div>

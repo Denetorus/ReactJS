@@ -7,7 +7,7 @@ export default class Menu extends Component{
             <nav>
                 <h4>{title}</h4>
                 <ul>
-                    {items.map(item => <li><a href={item.link}>{item.title}</a></li>)}
+                    {items.map(item => <li key={item.title}><a href={item.link}>{item.title}</a></li>)}
                 </ul>
             </nav>
         )

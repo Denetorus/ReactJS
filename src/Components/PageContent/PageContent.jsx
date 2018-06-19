@@ -8,7 +8,7 @@ export default class PageContent extends Component{
         const {articleItems} = this.props;
         return (
            <div className="container">
-               {articleItems.map(item => <Article item={item}/>)}
+               {articleItems.map(item => <Article key={item.title} item={item}/>)}
            </div>
         )
     }
