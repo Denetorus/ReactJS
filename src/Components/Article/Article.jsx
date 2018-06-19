@@ -8,7 +8,7 @@ export default class Article extends Component{
             <div className="blog-post">
                 <h2 className="blog-post-title">{item.title}</h2>
                 <p className="blog-post-meta">{item.date} by <a href="#">{item.author}</a></p>
-                {item.paragraphs.map(item => <ArticleItem item={item}/>)}
+                {item.paragraphs.map(item => <ArticleItem key={item.key} item={item}/>)}
             </div>
         )
     }
