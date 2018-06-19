@@ -1,8 +1,8 @@
-import "./css/Header.css";
+import "./Header.css";
 
 import React, { Component } from "react";
 
-import Login from "./Login.jsx";
+import Login from "components/Login";
 
 export default class Header extends Component{
 

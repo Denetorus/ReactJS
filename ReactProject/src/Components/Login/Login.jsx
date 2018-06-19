@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import Modal from "./Modal.jsx";
+import Modal from "components/Modal/index";
 
 export default class Login extends Component{
 

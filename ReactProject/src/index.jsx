@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDom from "react-dom";
 
-import Layout from "./Components/Layout.jsx";
+import Layout from "./Components/Layout/Layout.jsx";
 
 
 
