@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 
+import Article from "components/Article";
+
 export default class PageContent extends Component{
     render()
     {
-       return (
-           <div>
-               PageContent
+        const {articleItems} = this.props;
+        return (
+           <div className="container">
+               {articleItems.map(item => <Article item={item}/>)}
            </div>
-       )
+        )
     }
 }

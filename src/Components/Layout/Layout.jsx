@@ -7,17 +7,23 @@ import Header from "components/Header";
 import MainPage from "components/MainPage";
 import Footer from "components/Footer";
 
+const headerItems = [
+    { title: 'Home', link: '#' },
+    { title: 'New features', link: '#' },
+    { title: 'Press', link: '#' },
+    { title: 'New hires', link: '#' },
+    { title: 'About', link: '#' },
+];
 
 export default class Layout extends Component{
 
     render(){
         return (
             <div>
-                <Header/>
-                <MainPage/>
+                <Header headerItems={headerItems}/>
+                <MainPage />
                 <Footer/>
             </div>
         )
     }
-
 }

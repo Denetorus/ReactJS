@@ -3,28 +3,15 @@ import "./Menu.css";
 import React, { Component } from "react";
 
 export default class Menu extends Component{
-
     render(){
+        const { title, items } = this.props;
         return (
             <nav>
-                <div>Categories</div>
+                <h4>{title}</h4>
                 <ul>
-                    <li>
-                        <a href="#">News</a>
-                    </li>
-                    <li>
-                        <a href="#">Articles</a>
-                    </li>
-                    <li>
-                        <a href="#">Products</a>
-                    </li>
-                    <li>
-                        <a href="#">About me</a>
-                    </li>
+                    {items.map(item => <li><a href={item.link}>{item.title}</a></li>)}
                 </ul>
             </nav>
         )
     }
-
 }
-

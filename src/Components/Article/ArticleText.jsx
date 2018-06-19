@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
 
-export default class ArticleQuote extends Component{
+export default class ArticleText extends Component{
     render(){
         const { item } = this.props;
         return (
             <p>
-                {item}
+                {item.content}
             </p>
         )
     }
