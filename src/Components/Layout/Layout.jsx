@@ -4,19 +4,21 @@ import React, { Component } from 'react';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import HomePage from 'components/HomePage';
-import FeaturesPage from 'components/FeaturesPage/FeaturesPage';
+import MainPage from "components/Pages/MainPage";
+import FeaturesPage from 'components/FeaturesPage';
+import UsersPage from "components/Pages/UsersPage/UsersPage";
+import BlogPage from "components/Pages/BlogPage/BlogPage";
+import CommentsPage from "components/Pages/CommentsPage/CommentsPage";
 
 const headerItems = [
-    { title: 'Home', link: '#', name: 'Home'},
-    { title: 'New features', link: '#', name: 'Features'},
-    { title: 'Press', link: '#', name: 'Press' },
-    { title: 'New hires', link: '#', name: 'Hires' },
-    { title: 'About', link: '#', name: 'About' },
+    { title: 'Главная', link: '#', name: 'Main'},
+    { title: 'Пользователи', link: '#', name: 'Users'},
+    { title: 'Ваш блог', link: '#', name: 'Blog' },
+    { title: 'Комментарии', link: '#', name: 'Comments' },
 ];
 
 const initalState = {
-    HeaderItem: 'Home'
+    HeaderItem: 'Main'
 };
 
 export default class Layout extends Component
@@ -36,16 +38,16 @@ export default class Layout extends Component
     render(){
         const { HeaderItem } = this.state;
         let Page = '';
-        if (HeaderItem==='Home') {
-            Page = <HomePage />;
-        } else if (HeaderItem==='Features') {
-            Page = <FeaturesPage />
-        } else if (HeaderItem==='Press') {
-            Page = 'Press'
-        } else if (HeaderItem==='Hires') {
-            Page = 'Hires'
-        } else if (HeaderItem==='About') {
-            Page = 'About'
+        if (HeaderItem === 'Main') {
+            Page = <MainPage onChange={this.handleHeader}/>;
+        } else if (HeaderItem === 'Users') {
+            Page = <UsersPage onChange={this.handleHeader}/>
+        } else if (HeaderItem === 'Blog') {
+            Page = <BlogPage onChange={this.handleHeader}/>
+        } else if (HeaderItem === 'Comments') {
+            Page = <CommentsPage onChange={this.handleHeader}/>
+        } else {
+            Page = <MainPage onChange={this.handleHeader}/>;
         }
         console.log(HeaderItem);
         return (
