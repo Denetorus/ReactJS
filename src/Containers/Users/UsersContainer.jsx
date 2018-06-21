@@ -7,13 +7,11 @@ import myData from 'info/Users.json';
 export default class UsersContainer extends PureComponent {
     constructor(props) {
         super(props);
-        this.handleHeader = this.handleHeader.bind(this);
 
         this.state = {
             loading: false,
             page: 1,
             users: [],
-            HeaderItem: "Users"
         };
 
     }
@@ -34,22 +32,11 @@ export default class UsersContainer extends PureComponent {
         this.load();
     };
 
-    handleHeader = (e, name) => {
-        const { onChange } = this.props;
-        this.setState({
-            HeaderItem: name
-        });
-        if(typeof onChange === 'function') {
-            onChange(e, name);
-        }
-        e.preventDefault();
-    };
-
     render(){
         const { users } = this.state;
         return (
             <Fragment>
-                <Users items={users} onChange={this.handleHeader}/>
+                <Users items={users}/>
             </Fragment>
         )
     }
