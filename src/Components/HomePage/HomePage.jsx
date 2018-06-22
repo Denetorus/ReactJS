@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import PageContent from '../PageContent/index';
+import PageContent from '../Pages/PageContent/index';
 import SideNav from 'components/SideNav/SideNav';
 
 export default class HomePage extends Component{

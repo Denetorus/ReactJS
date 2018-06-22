@@ -4,6 +4,7 @@ import Users from "components/Users";
 
 import myData from 'info/Users.json';
 
+
 export default class UsersContainer extends PureComponent {
     constructor(props) {
         super(props);
@@ -33,7 +34,7 @@ export default class UsersContainer extends PureComponent {
     };
 
     render(){
-        const { users } = this.state;
+        const {users} = this.state;
         return (
             <Fragment>
                 <Users items={users}/>
