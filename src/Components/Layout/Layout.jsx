@@ -3,33 +3,28 @@ import './Layout.css'
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import routes from './../../routes.js'
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import MainPage from "components/Pages/MainPage";
-import UsersPage from "components/Pages/UsersPage/UsersPage";
-import BlogPage from "components/Pages/BlogPage/BlogPage";
-import CommentsPage from "components/Pages/CommentsPage/CommentsPage";
 
 const headerItems = [
-    { title: 'Главная', link: '/', name: 'Main'},
-    { title: 'Пользователи', link: '/users', name: 'Users'},
-    { title: 'Ваш блог', link: '/blog', name: 'Blog' },
-    { title: 'Комментарии', link: '/comments', name: 'Comments' },
+    { id: 1, title: 'Главная', link: '/', name: 'Main'},
+    { id: 2, title: 'Пользователи', link: '/users', name: 'Users'},
+    { id: 3, title: 'Ваш блог', link: '/blog', name: 'Blog' },
+    { id: 4, title: 'Комментарии', link: '/comments', name: 'Comments' },
 ];
 
 export default class Layout extends Component
 {
      render(){
+         var browserHistory = Router.browserHistory;
         return (
             <div>
                 <Header headerItems={headerItems}/>
-                <Router>
+                <Router history={browserHistory}>
                     <Switch>
-                        <Route exact path='/' component={MainPage}/>
-                        <Route path="/users" component={UsersPage}/>
-                        <Route path="/blog" component={BlogPage}/>
-                        <Route path="/comments" component={CommentsPage}/>
+                        {routes.map((route) => <Route key={"Comp"+route.component} {...route}/>)}
                     </Switch>
                 </Router>
                 <Footer/>
