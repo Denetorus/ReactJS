@@ -1,57 +1,37 @@
 import './Layout.css'
 
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import HomePage from 'components/HomePage';
-import FeaturesPage from 'components/FeaturesPage/FeaturesPage';
+import MainPage from "components/Pages/MainPage";
+import UsersPage from "components/Pages/UsersPage/UsersPage";
+import BlogPage from "components/Pages/BlogPage/BlogPage";
+import CommentsPage from "components/Pages/CommentsPage/CommentsPage";
 
 const headerItems = [
-    { title: 'Home', link: '#', name: 'Home'},
-    { title: 'New features', link: '#', name: 'Features'},
-    { title: 'Press', link: '#', name: 'Press' },
-    { title: 'New hires', link: '#', name: 'Hires' },
-    { title: 'About', link: '#', name: 'About' },
+    { title: 'Главная', link: '/', name: 'Main'},
+    { title: 'Пользователи', link: '/users', name: 'Users'},
+    { title: 'Ваш блог', link: '/blog', name: 'Blog' },
+    { title: 'Комментарии', link: '/comments', name: 'Comments' },
 ];
-
-const initalState = {
-    HeaderItem: 'Home'
-};
 
 export default class Layout extends Component
 {
-    constructor(props){
-        super(props);
-        this.state = initalState;
-        this.handleHeader = this.handleHeader.bind(this);
-    }
-    handleHeader(HeaderItem)
-    {
-        this.setState({
-            HeaderItem: HeaderItem
-        });
-    };
-
-    render(){
-        const { HeaderItem } = this.state;
-        let Page = '';
-        if (HeaderItem==='Home') {
-            Page = <HomePage />;
-        } else if (HeaderItem==='Features') {
-            Page = <FeaturesPage />
-        } else if (HeaderItem==='Press') {
-            Page = 'Press'
-        } else if (HeaderItem==='Hires') {
-            Page = 'Hires'
-        } else if (HeaderItem==='About') {
-            Page = 'About'
-        }
-        console.log(HeaderItem);
+     render(){
         return (
             <div>
-                <Header headerItems={headerItems} onChange={this.handleHeader}/>
-                {Page}
+                <Header headerItems={headerItems}/>
+                <Router>
+                    <Switch>
+                        <Route exact path='/' component={MainPage}/>
+                        <Route path="/users" component={UsersPage}/>
+                        <Route path="/blog" component={BlogPage}/>
+                        <Route path="/comments" component={CommentsPage}/>
+                    </Switch>
+                </Router>
                 <Footer/>
             </div>
         )
