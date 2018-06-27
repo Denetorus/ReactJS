@@ -1,5 +1,5 @@
-import React, {PureComponent} from 'react';
-
+import React, {PureComponent, Fragment} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import UserRow from 'components/Users/UserRow';
 
 export default class Users extends PureComponent {
@@ -7,7 +7,7 @@ export default class Users extends PureComponent {
         const { items } = this.props;
         return (
             <div>
-                {items.map(item => <UserRow key={item.id} item={item}/>)}
+                        {items.map(item => <UserRow key={item.id} item={item}/>)}
             </div>
         )
     }

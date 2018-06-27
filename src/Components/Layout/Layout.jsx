@@ -18,12 +18,13 @@ const headerItems = [
 export default class Layout extends Component
 {
      render(){
+         var browserHistory = Router.browserHistory;
         return (
             <div>
                 <Header headerItems={headerItems}/>
-                <Router>
+                <Router history={browserHistory}>
                     <Switch>
-                        {routes.map((route) => <Route key={"Comp"+route.component}{...route}/>)}
+                        {routes.map((route) => <Route key={"Comp"+route.component} {...route}/>)}
                     </Switch>
                 </Router>
                 <Footer/>

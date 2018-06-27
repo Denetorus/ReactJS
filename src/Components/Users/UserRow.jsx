@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import { Link } from 'react-router-dom';
 
 export default class UserRow extends PureComponent {
     render() {
@@ -6,9 +7,9 @@ export default class UserRow extends PureComponent {
         return (
             <div className="row">
                 <div className="col-4">
-                    <a href={"/blog/"+item.id}>{item.name}</a>
+                    <Link to={"/blog/"+item.id}>{item.name}</Link>
                 </div>
             </div>
         )
-    }s
+    }
 }
