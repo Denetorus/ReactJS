@@ -1,9 +1,9 @@
 import './Layout.css'
 
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, {Component, Fragment} from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import routes from './../../routes.js'
+import routes from 'root/routes.js'
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -18,17 +18,16 @@ const headerItems = [
 export default class Layout extends Component
 {
      render(){
-         var browserHistory = Router.browserHistory;
         return (
-            <div>
-                <Header headerItems={headerItems}/>
-                <Router history={browserHistory}>
+            <BrowserRouter>
+                <Fragment>
+                    <Header headerItems={headerItems}/>
                     <Switch>
                         {routes.map((route) => <Route key={"Comp"+route.component} {...route}/>)}
                     </Switch>
-                </Router>
-                <Footer/>
-            </div>
+                    <Footer/>
+                </Fragment>
+            </BrowserRouter>
         )
     }
 }

@@ -8,9 +8,10 @@ export default class Footer extends Component{
                 <div className="container">
                     <div className="row justify-content-center">
                         <div>
-                            Blog template built
-                            for <a href="http://getbootstrap.com">Bootstrap</a> b
-                            y <a href="https://twitter.com/mdo">@mdo</a>
+                            <span>Блог разработан на основе: </span>
+                            <a href="https://github.com/Denetorus/Sketch">Sketch</a>
+                            <span> и </span>
+                            <a href="https://react-cn.github.io/react/downloads.html">ReactJS</a>
                         </div>
                     </div>
                     <div className="row justify-content-center">
